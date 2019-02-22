@@ -4,7 +4,6 @@ import json
 import asyncio
 import websockets
 
-
 class GraceFuture(asyncio.Future):
     def __init__(self):
         asyncio.Future.__init__(self)

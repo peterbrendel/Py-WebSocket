@@ -30,6 +30,7 @@ PORT = 1501
 connected = list()
 available_index = oset([0,1,2,3,4,5,6,7,8,9])
 map_positions = []
+boundaries = []
 
 # End of Control variables #
 #
@@ -178,14 +179,19 @@ def delPlayer(player):
 
 #   # Prepare map positions and facing angle based on amount of clients - Algebra
 def prepare_map():
-    radius = 200.0
+    radius = 250.0
     angle = 0.0
+    boundAngle = 90.0 * math.pi / 180.0
     for i in range(MAX_PLAYERS):
         x = radius * math.cos(angle)
         y = radius * math.sin(angle)
         direction = angle - math.pi/2
         print(" {:3f}, {:3f}    ->  {:3f}".format(x,y,angle))
         map_positions.append([x,y,direction,False, -1])
+        x = radius * math.cos(boundAngle)
+        y = radius * math.sin(boundAngle)
+        direction = boundAngle - math.pi/2
+        boundaries.append([x,y,direction])
         angle += float(math.pi*2 / float(MAX_PLAYERS))
         
 
