@@ -6,6 +6,6 @@ Linux
 > $ python3 Server.py
 
 Windows
-> > python Server.py
+> \> python Server.py
 
 depende da variavel de ambiente de vcs tb, vcs programam se virem
